@@ -134,4 +134,74 @@ namespace main_savitch_5
 	}
     }
 
+    size_t list_occurrences(const node* head_ptr, const node::value_type& target)
+    {
+        const node* current = head_ptr;
+         std::size_t count = 0;
+
+         while(current != NULL)
+             if(current->data() == target)
+                count++;
+            current = current->link();
+         
+         return count;
+    }
+
+    void list_tail_attach(node*& head_ptr, const node::value_type& entry)
+    {
+          // create node
+        node* temp = new node;
+        temp->set_data(entry);
+        temp->set_link(NULL);
+
+        if(!head_ptr) { // empty list becomes the new node
+            head_ptr = temp;
+            return;
+        } else { // find last and link the new node
+            node* last = head_ptr;
+            while(last->link()) last=last->link();
+            last->set_link(temp);
+        }
+
+    }
+    
+
+    void list_tail_remove(node*& head_ptr)
+    {
+        if(head_ptr->link() == NULL)
+            delete head_ptr;
+        
+        node* second_last = head_ptr;
+        while (second_last -> link()-> link() != NULL)
+        {
+            second_last = second_last->link();
+        }
+
+        delete(second_last->link());
+
+        second_last -> set_link(NULL);
+        
+    }
+
+    node* list_copy_front(const node* source_ptr, size_t n)
+    {
+        if(source_ptr == NULL)  // Takes care of NULL case
+        {
+        return NULL;
+        }
+        node *new_head_ptr = NULL;  // Creates new head and ensures NULL
+        const node *cursor = source_ptr;  // Sets temp Node = to source
+
+        size_t i = 0;   // Initializes temp variable
+
+        while(cursor!= NULL && i < n)   // Loop that continues while n is bigger than i and it is not NULL
+        {
+            list_tail_attach(new_head_ptr, cursor->data());
+            cursor = cursor->link();  // Attaches to new list
+            i++;    // Increases count
+        }
+        return new_head_ptr;
+    }
+
 }
+

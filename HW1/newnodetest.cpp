@@ -63,9 +63,9 @@ int main( )
 	    case 'S':
 		n = get_position("Type the amount to copy: ");
 		cout << "Here is the result of the copy of that segment: " << endl;
-		// segment = list_copy_front(test, n);
-		// show_list(segment);
-		// list_clear(segment);
+		segment = list_copy_front(test, n);
+		show_list(segment);
+		list_clear(segment);
 		break;
 	    case 'P':
 		cout << "The list has these items: " << endl;
