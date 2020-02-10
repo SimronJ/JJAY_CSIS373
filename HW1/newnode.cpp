@@ -1,3 +1,6 @@
+// SIMRANJEET SINGH
+//Professor: Ni Lu
+
 // FILE: newnode.cpp
 // IMPLEMENTS: The functions of the node class and the
 // linked list toolkit (see node1.h for documentation).
