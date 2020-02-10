@@ -1,3 +1,6 @@
+// SIMRANJEET SINGH
+//Professor: Ni Lu
+
 // FILE: newnode.h
 // PROVIDES: A class for a node in a linked list, and list manipulation
 // functions, all within the namespace main_savitch_5.  This version of
