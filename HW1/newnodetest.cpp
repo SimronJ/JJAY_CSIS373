@@ -1,3 +1,6 @@
+// SIMRANJEET SINGH
+//Professor: Ni Lu
+
 // FILE: newlink.cxx
 // An interactive test program for the four new functions of the
 // expanded linked list toolkit.
