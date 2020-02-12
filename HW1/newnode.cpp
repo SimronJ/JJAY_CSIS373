@@ -139,15 +139,11 @@ namespace main_savitch_5
 
     size_t list_occurrences(const node* head_ptr, const node::value_type& target)
     {
-        const node* current = head_ptr;
-         std::size_t count = 0;
-
-         while(current != NULL)
-             if(current->data() == target)
-                count++;
-            current = current->link();
-         
-         return count;
+       if (head_ptr == NULL) 
+            return 0; 
+        if (head_ptr->data() == target) 
+             return 1 + list_occurrences(head_ptr->link(), target); 
+        return list_occurrences(head_ptr->link(), target); 
     }
 
     void list_tail_attach(node*& head_ptr, const node::value_type& entry)
